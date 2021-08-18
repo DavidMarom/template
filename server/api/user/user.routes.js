@@ -4,16 +4,16 @@ const {countUsers, getAllUsers, getUser, getUsers, deleteUser, updateUser,update
 const router = express.Router()
 
 // router.use(requireAuth)
-console.log('in user routes');
+console.log('01 in user routes');
 
 router.get('/', getAllUsers)
+router.get('/:id', getUser)
+router.get('/:filter', getUsers)
 router.get('/count', countUsers)
 
 router.put('/update2', updateUser2)
 router.put('/:id', requireAuth , updateUser)
 
-router.get('/:filter', getUsers)
-router.get('/:id', getUser)
 
 router.delete('/:id', requireAdmin, deleteUser)
 

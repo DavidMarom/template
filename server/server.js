@@ -33,10 +33,8 @@ const userRoutes = require('./api/user/user.routes')
 
 
 //routes
-// app.use('/api/auth', authRoutes)
+app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
-
-
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

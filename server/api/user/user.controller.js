@@ -1,6 +1,9 @@
 const userService = require('./user.service')
 
+// http://localhost:3030/api/user/611d025a36ccc543adf98988
+
 async function getUser(req, res) {
+	console.log('█controller: getUser', req.params.id);
     const user = await userService.getById(req.params.id)
     res.send(user)
 }
@@ -11,10 +14,12 @@ async function getUsers(req, res) {
 }
 
 async function countUsers(req, res) {
+	console.log('02 in count controller');
     const count = await userService.count()
     res.send(count);
 }
 
+// http://localhost:3030/api/user/?page=1
 async function getAllUsers(req, res) {
     const queryPage = req.query.page;
     const pageSize = 4;

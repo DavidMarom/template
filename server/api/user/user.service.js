@@ -18,12 +18,11 @@ async function query(filterBy) {
     let criteria = {};
     if (filterBy != 'undefined' || filterBy != '') { criteria = { name: new RegExp(".*" + filterBy + ".*", 'i') } }
     else { criteria = '' }
-    const collection = await dbService.getCollection('user');
+    const collection = await dbService.getCollection('users');
     try {
         if (filterBy != undefined || filterBy != '') { var users = await collection.find(criteria).toArray(); }
         else { var users = await collection.find().toArray(); }
-        users.forEach(user => delete user.password);
-
+        // users.forEach(user => delete user.password);
         return users;
     }
 
@@ -34,10 +33,10 @@ async function query(filterBy) {
 }
 
 async function query2(queryPage, pageSize) {
-    const collection = await dbService.getCollection('user');
+    const collection = await dbService.getCollection('users');
     try {
         var users = await collection.find().skip((queryPage - 1) * pageSize).limit(pageSize).toArray();
-        users.forEach(user => delete user.password);
+        // users.forEach(user => delete user.password);
 
         return users;
     }
@@ -47,7 +46,8 @@ async function query2(queryPage, pageSize) {
     }
 }
 async function count() {
-    const collection = await dbService.getCollection('user');
+	console.log('03 in count service');
+    const collection = await dbService.getCollection('users');
     try {
         var number = await collection.aggregate([{ $count: "total" }]).toArray();
         return number;
@@ -59,13 +59,11 @@ async function count() {
 }
 
 async function getById(userId) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     try {
         const user = await collection.findOne({ "_id": ObjectId(userId) })
-        delete user.password
+        // delete user.password
         
-
-
         return user
     } catch (err) {
         console.log(`ERROR: while finding user ${userId}`)
@@ -74,7 +72,7 @@ async function getById(userId) {
 }
 
 async function getByEmail(email) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     try {
         const user = await collection.findOne({ email })
         return user
@@ -85,7 +83,7 @@ async function getByEmail(email) {
 }
 
 async function remove(userId) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     try {
         await collection.deleteOne({ "_id": ObjectId(userId) })
     } catch (err) {
@@ -95,7 +93,7 @@ async function remove(userId) {
 }
 
 async function update(user) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     user._id = ObjectId(user._id);
 
     try {
@@ -108,7 +106,7 @@ async function update(user) {
 }
 
 async function update2(user) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     user._id = ObjectId(user._id);
 
     try {
@@ -122,7 +120,7 @@ async function update2(user) {
 
 
 async function add(user) {
-    const collection = await dbService.getCollection('user')
+    const collection = await dbService.getCollection('users')
     try {
         await collection.insertOne(user);
         return user;
