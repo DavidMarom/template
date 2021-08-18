@@ -7,8 +7,8 @@ const router = express.Router()
 console.log('01 in user routes');
 
 router.get('/', getAllUsers)
-router.get('/:id', getUser)
 router.get('/:filter', getUsers)
+router.get('/id/:id', getUser)
 router.get('/count', countUsers)
 
 router.put('/update2', updateUser2)
