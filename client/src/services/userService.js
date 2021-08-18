@@ -23,12 +23,10 @@ function update(user) {
 
 async function login(userCred) {
     const user = await httpService.post('auth/login', userCred)
-    return _handleLogin(user)
 }
 
 async function signup(userCred) {
     const user = await httpService.post('auth/signup', userCred)
-    return _handleLogin(user)
 }
 
 async function logout() {

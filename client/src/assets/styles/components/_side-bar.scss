@@ -1,13 +1,20 @@
 .side-bar {
-    background-color: #080056;
+    background-color: #2e2b28;
     width: 256px;
     color: #ffffff;
-    height: 600px;
+    height: 700px;
     text-align: left;
     padding-top: 3rem;
 
     .title {
-        color: #3223a7;
+        color: #f0f0f0;
         padding-left: 30px;
     }
+}
+.inner-side-bar {
+    
+    height: 300px;
+    padding-top: 3rem;
+
+    
 }

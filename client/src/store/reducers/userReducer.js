@@ -9,7 +9,7 @@ const initialState = {
     popup: true
 }
 
-export function userReducer(state = initialState, action = {}) {
+export function user(state = initialState, action = {}) {
     switch (action.type) {
         case 'COUNT_USERS':
             return { ...state, userCount: action.number[0]['total'] };

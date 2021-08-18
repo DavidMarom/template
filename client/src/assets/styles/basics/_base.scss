@@ -10,16 +10,13 @@
 html {
   font-family: FiraSans;
   overflow-y: scroll;
-
-  // line-height: 1.6;
-  // color: $clr2;
 }
 
 body {
   font-size: rem(16px);
   margin: 0;
-  // background-color: #a0909e;
-  color: $text-dark;
+  background-color: $bg-dark;
+  color: $text-light;
 }
 
 h1,
@@ -29,13 +26,12 @@ h4,
 h5,
 h6 {
   font-family: FiraSans;
-  // margin: 0 0 0.6em;
-  // line-height: 1;
+  
 }
 
 h1 {
   font-size: rem(48px);
-  color: $text-dark;
+  color: $text-light;
   margin: 0;
 }
 

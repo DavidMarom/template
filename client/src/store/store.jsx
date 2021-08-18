@@ -1,17 +1,13 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 
-import { userReducer } from '../store/reducers/userReducer';
-import { settingsReducer } from '../store/reducers/settingsReducer';
-import systemReducer from './reducers/systemReducer';
-import { annReducer } from './reducers/annReducer';
+import { user } from '../store/reducers/userReducer';
+import { system } from '../store/reducers/systemReducer';
 
 
 const rootReducer = combineReducers({
-    user: userReducer,
-    system: systemReducer,
-    settingsReducer,
-    annReducer
+    user,
+    system
 
 })
 

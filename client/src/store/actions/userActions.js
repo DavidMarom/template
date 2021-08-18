@@ -14,6 +14,7 @@ export function updateUser(user) {
     dispatch({ type: 'UPDATE_USER', _user })
   };
 }
+
 export function showPopup(show) {
   return async dispatch => {
     console.log('in actions', show);
