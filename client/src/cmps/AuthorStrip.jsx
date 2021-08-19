@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { updateAuthor } from "../store/actions/authorActions";
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 
 export function AuthorStrip({ author, doRefresh }) {
 	const dispatch = useDispatch()
 
 	const [formName, setFormName] = useState(author.first_name);
+	const [formLastName, setFormLastName] = useState(author.last_name);
 	const [editMode, setEditMode] = useState(false);
 
 	if (!author) { return <h1>loading</h1> }
@@ -19,17 +20,18 @@ export function AuthorStrip({ author, doRefresh }) {
 		ev.preventDefault();
 		const newAuthor = {
 			first_name: formName,
+			last_name: formLastName,
 			_id: author._id
 		};
 		dispatch(updateAuthor(newAuthor));
 		toggleEdit();
-		console.log('update triggered');
 		doRefresh();
 	};
 
 	let form = (
 		<form onSubmit={doUpdate}>
 			<input name="name" type="text" onChange={event => { setFormName(event.target.value) }} placeholder={author.first_name} /><br />
+			<input name="name" type="text" onChange={event => { setFormLastName(event.target.value) }} placeholder={author.last_name} /><br />
 
 			<button>Save</button>
 		</form>
@@ -44,6 +46,7 @@ export function AuthorStrip({ author, doRefresh }) {
 			:
 			<div className="table">
 				<p className="tc">{author.first_name}</p>
+				<p className="tc">{author.last_name}</p>
 				<button onClick={toggleEdit}>Edit</button>
 			</div>
 		)

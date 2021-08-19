@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPageName } from '../store/actions/userActions'
 import { loadBooks, countBooks } from "../store/actions/bookActions";
+import { loadAuthors } from "../store/actions/authorActions";
 import { BookStrip } from '../cmps/BookStrip';
 
 const _Books = () => {
@@ -28,12 +29,13 @@ const _Books = () => {
 	const doRefresh = () => {
 		setRefresh(refresh+1)
 		dispatch(loadBooks('', currPage));
-		console.log(refresh);
 	}
 
 
 	useEffect(() => {
 		dispatch(loadBooks('', currPage));
+		dispatch(loadAuthors());
+
 	}, [currPage, refresh]);
 
 
@@ -44,8 +46,6 @@ const _Books = () => {
 	}, []);
 
 	
-
-	console.log('log:', books);
 
 	return (
 

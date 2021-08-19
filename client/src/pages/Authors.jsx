@@ -16,19 +16,10 @@ const _Authors = () => {
 
 	let totalPages = Math.ceil(authorCount / 4)
 
-	// const searchChange = ev => {
-	// 	setSearch(ev.target.value);
-	// }
-
-	// const doSearch = (ev) => {
-	// 	ev.preventDefault();
-	// 	dispatch(loadAuthors(search));
-	// }
 
 	const doRefresh = () => {
 		setRefresh(refresh+1)
 		dispatch(loadAuthors());
-		console.log(refresh);
 	}
 
 
@@ -44,9 +35,6 @@ const _Authors = () => {
 	}, []);
 
 	
-
-	console.log('log:', authors);
-
 	return (
 
 		(authors ?
@@ -58,8 +46,8 @@ const _Authors = () => {
 				</div>
 
 				<div className="table-head">
-					<p className="tc">Author Name</p>
-					<p className="tc">Author</p>
+					<p className="tc">First Name</p>
+					<p className="tc">Last Name</p>
 					<p className="tc"></p>
 				</div>
 

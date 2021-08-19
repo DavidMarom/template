@@ -16,15 +16,15 @@ function getAuthors() {
 //     return httpService.delete(`author/${userId}`)
 // }
 
-// function update(book) {
-//     return httpService.put(`author/update`, book)
-// }
+function update(author) {
+    return httpService.put(`author/update`, author)
+}
 
 
 export const authorService = {
     getAuthors,
     // getById,
     // remove,
-    // update,
+    update,
     count
 };

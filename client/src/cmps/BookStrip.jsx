@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { updateBook } from "../store/actions/bookActions";
 import { useSelector, useDispatch } from 'react-redux'
 
 
 export function BookStrip({ book, doRefresh }) {
 	const dispatch = useDispatch()
+	const authors = useSelector((state) => state.author.authors);
 
 	const [formName, setFormName] = useState(book.name);
 	const [formAuthor, setFormAuthor] = useState(book.author);
@@ -25,14 +26,22 @@ export function BookStrip({ book, doRefresh }) {
 		};
 		dispatch(updateBook(newBook));
 		toggleEdit();
-		console.log('update triggered');
 		doRefresh();
 	};
 
 	let form = (
 		<form onSubmit={doUpdate}>
 			<input name="name" type="text" onChange={event => { setFormName(event.target.value) }} placeholder={book.name} /><br />
-			<input name="author" type="text" onChange={event => { setFormAuthor(event.target.value) }} placeholder={book.author} /><br />
+
+			<label htmlFor="authors">Choose author:</label>
+			<select name="author" id="authors" onChange={event => { setFormAuthor(event.target.value) }}>
+				{authors.map(author =>
+					<option
+					key={author._id}
+					value={author.last_name}
+					>{author.last_name}</option>)
+				}
+			</select>
 
 			<button>Save</button>
 		</form>
