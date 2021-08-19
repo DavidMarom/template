@@ -31,12 +31,14 @@ if (process.env.NODE_ENV === 'production') {
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const bookRoutes = require('./api/book/book.routes')
+const authorRoutes = require('./api/author/author.routes')
 
 
 //routes
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/book', bookRoutes)
+app.use('/api/author', authorRoutes)
 
 app.get('/**', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

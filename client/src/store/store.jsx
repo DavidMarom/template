@@ -3,12 +3,14 @@ import thunk from 'redux-thunk'
 
 import { user } from '../store/reducers/userReducer';
 import { book } from '../store/reducers/bookReducer';
+import { author } from '../store/reducers/authorReducer';
 import { system } from '../store/reducers/systemReducer';
 
 
 const rootReducer = combineReducers({
     user,
     book,
+	author,
     system
 })
 
