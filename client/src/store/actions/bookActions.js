@@ -1,35 +1,28 @@
-import { userService } from '../../services/userService';
+import { bookService as bookService } from '../../services/bookService';
 import { loading, doneLoading } from './systemActions';
 
-export function countUsers() {
+export function countBooks() {
   return async dispatch => {
-    const number = await userService.count();
-    dispatch({ type: 'COUNT_USERS', number })
+    const number = await bookService.count();
+    dispatch({ type: 'COUNT_BOOKS', number })
   };
 }
 
-export function updateUser(user) {
+export function updateBook(user) {
   return async dispatch => {
-    const _user = await userService.update(user);
+    const _user = await bookService.update(user);
     dispatch({ type: 'UPDATE_USER', _user })
   };
 }
 
-export function showPopup(show) {
-  return async dispatch => {
-    console.log('in actions', show);
-    dispatch({ type: 'SHOW_POPUP', show: show })
-  };
-}
-
-export function loadUsers(filter, currPage) {
+export function loadBooks(filter, currPage) {
   return async dispatch => {
     try {
       dispatch(loading());
-      const users = await userService.getUsers(filter, currPage);
-      dispatch({ type: 'SET_USERS', users });
+      const books = await bookService.getBooks(filter, currPage);
+      dispatch({ type: 'SET_BOOKS', books });
     } catch (err) {
-      console.log('UserActions: err in loadUsers', err);
+      console.log('BookActions: err in loadBook', err);
 
     } finally {
       dispatch(doneLoading());
@@ -37,52 +30,21 @@ export function loadUsers(filter, currPage) {
   };
 }
 
-export function removeUser(userId) {
+export function removeBook(bookId) {
   return async dispatch => {
     try {
-      await userService.remove(userId);
-      dispatch({ type: 'REMOVE_USER', userId });
+      await bookService.remove(bookId);
+      dispatch({ type: 'REMOVE_BOOK', bookId });
     } catch (err) {
-      console.log('UserActions: err in removeUser', err);
+      console.log('BookActions: err in removeUser', err);
     }
   };
 }
 
-export function signup(userCreds) {
-  return async dispatch => {
-    const user = await userService.signup(userCreds);
-    dispatch({ type: 'SET_USER', user });
-  };
-}
-
-export function logout() {
+export function getBookById(userId) {
   return async dispatch => {
     try {
-      await userService.logout();
-      dispatch({ type: 'SET_USER', user: null });
-    } catch (err) {
-      console.log('Log out problem: ', err)
-    }
-  };
-}
-
-export function login(userCreds) {
-  return async dispatch => {
-    const user = await userService.login(userCreds);
-    dispatch({ type: 'SET_USER', user });
-  };
-}
-
-export function setPageName(name) {
-  return dispatch => {
-    dispatch({ type: 'PAGE_NAME', name });
-  };
-}
-
-export function getUserById(userId) {
-  return async dispatch => {
-    try {
-      await userService.getById(userId);
+      await bookService.getById(userId);
       dispatch({ type: 'GET_USER', userId });
     } catch (err) {
       console.log('UserActions: err in getUser', err);

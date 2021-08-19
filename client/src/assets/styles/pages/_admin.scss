@@ -1,12 +1,18 @@
 .table-head {
     display: grid;
-    grid-template-columns: 7% 38% 22% 30%;
+    grid-template-columns: 17% 28% 22% 30%;
     font-weight: bold;
+}
+
+.page-details {
+    display: grid;
+    grid-template-columns: 30% 30% 30% 10%;
+    
 }
 
 .table {
     display: grid;
-    grid-template-columns: 7% 38% 22% 30%;
+    grid-template-columns: 17% 28% 22% 30%;
 }
 
 // for punch-in page
@@ -39,8 +45,8 @@
     border-radius: 0px;
     margin-right: 0px;
     margin-bottom: 1px;
-    background-color: #fff;
-    border-bottom: 1px solid #e6e6e6;
+    background-color: rgb(37, 37, 37);
+    border-bottom: 1px solid #585858;
 }
 
 .tch {

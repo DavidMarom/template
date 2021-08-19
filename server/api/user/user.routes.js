@@ -7,14 +7,15 @@ const router = express.Router()
 console.log('01 in user routes');
 
 router.get('/', getAllUsers)
-router.get('/:filter', getUsers)
-router.get('/id/:id', getUser)
 router.get('/count', countUsers)
 
+router.get('/:filter', getUsers)
+router.get('/id/:id', getUser)
+
 router.put('/update2', updateUser2)
-router.put('/:id', requireAuth , updateUser)
+router.put('/:id' , updateUser)
 
 
-router.delete('/:id', requireAdmin, deleteUser)
+router.delete('/:id', deleteUser)
 
 module.exports = router

@@ -7,14 +7,14 @@ const router = express.Router()
 console.log('01 in Book routes');
 
 router.get('/', getAllBooks)
-router.get('/id/:id', getBook)
-router.get('/:filter', getBooks)
+// router.get('/:id', getBook)
+// router.get('/filter', getBooks)
 router.get('/count', countBooks)
 
-router.put('/update', updateBook)
-router.put('/:id', requireAuth , updateBook)
+// router.put('/update', updateBook)
+// router.put('/:id', updateBook)
 
 
-router.delete('/:id', requireAdmin, deleteBook)
+// router.delete('/:id', deleteBook)
 
 module.exports = router

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-// import { useDispatch, useSelector } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { withRouter } from "react-router";
 
@@ -10,6 +9,9 @@ import { Authors } from "./pages/Authors";
 import { SideBar } from "./cmps/SideBar";
 
 function _App() {
+	
+
+
 	return (
 		<div className="outter-container">
 			<div className="inner-container">

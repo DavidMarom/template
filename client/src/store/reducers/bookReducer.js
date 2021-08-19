@@ -1,32 +1,28 @@
-let localLoggedinUser = null;
-if (sessionStorage.user) localLoggedinUser = JSON.parse(sessionStorage.user);
-
 const initialState = {
-    users: [],
-    loggedInUser: localLoggedinUser,
-    userCount: null,
-    pageName: null,
-    popup: true
+    books: [],
+    bookCount: null,
+	activeBook : null
 }
 
-export function user(state = initialState, action = {}) {
+export function book(state = initialState, action = {}) {
     switch (action.type) {
-        case 'COUNT_USERS':
-            return { ...state, userCount: action.number[0]['total'] };
-        case 'SHOW_POPUP':
-            return { ...state, popup: action.show };
-        case 'SET_USER':
-            return { ...state, loggedInUser: action.user, popup: true };
-        case 'GET_USER':
-            return { ...state, singleUser: action.userId };
-        case 'SET_USERS':
-            return { ...state, users: action.users };
-        case 'REMOVE_USER':
-            return { ...state, users: state.users.filter(user => user._id !== action.userId) };
-        case 'PAGE_NAME':
-            return { ...state, pageName: action.name };
-        case 'UPDATE_USER':
-            return { ...state, users: state.users.map(user => (action._user._id === user._id) ? action._user : user) }
+        case 'COUNT_BOOKS':
+            return { ...state, bookCount: action.number[0]['total'] };
+        
+        case 'SET_BOOK':
+            return { ...state, activeBook: action.book };
+
+        case 'GET_BOOK':
+            return { ...state, singleUser: action.bookId };
+
+        case 'SET_BOOKS':
+            return { ...state, books: action.books };
+
+        case 'REMOVE_BOOK':
+            return { ...state, books: state.books.filter(book => book._id !== action.bookId) };
+        
+        case 'UPDATE_BOOK':
+            return { ...state, book: state.books.map(book => (action._book._id === book._id) ? action._book : book) }
 
         default:
             return state
