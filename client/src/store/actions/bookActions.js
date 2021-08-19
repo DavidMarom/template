@@ -8,10 +8,10 @@ export function countBooks() {
   };
 }
 
-export function updateBook(user) {
+export function updateBook(book) {
   return async dispatch => {
-    const _user = await bookService.update(user);
-    dispatch({ type: 'UPDATE_USER', _user })
+    const _book = await bookService.update(book);
+    dispatch({ type: 'UPDATE_BOOK', _book })
   };
 }
 

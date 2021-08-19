@@ -11,7 +11,7 @@ router.get('/', getAllBooks)
 // router.get('/filter', getBooks)
 router.get('/count', countBooks)
 
-// router.put('/update', updateBook)
+router.put('/update', updateBook)
 // router.put('/:id', updateBook)
 
 

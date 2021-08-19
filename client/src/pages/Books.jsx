@@ -6,6 +6,7 @@ import { BookStrip } from '../cmps/BookStrip';
 
 const _Books = () => {
 	const dispatch = useDispatch()
+	const [refresh, setRefresh] = useState(0)
 
 	const bookCount = useSelector((state) => state.book.bookCount);
 	const books = useSelector((state) => state.book.books);
@@ -24,18 +25,25 @@ const _Books = () => {
 		dispatch(loadBooks(search));
 	}
 
+	const doRefresh = () => {
+		setRefresh(refresh+1)
+		dispatch(loadBooks('', currPage));
+		console.log(refresh);
+	}
+
+
 	useEffect(() => {
 		dispatch(loadBooks('', currPage));
-	}, [currPage]);
-	
-	
+	}, [currPage, refresh]);
+
+
 	// On mount
 	useEffect(() => {
 		dispatch(setPageName('books'));
 		dispatch(countBooks());
 	}, []);
 
-
+	
 
 	console.log('log:', books);
 
@@ -52,9 +60,10 @@ const _Books = () => {
 				<div className="table-head">
 					<p className="tc">Book Name</p>
 					<p className="tc">Author</p>
+					<p className="tc"></p>
 				</div>
 
-				{books.map(book => <BookStrip key={book._id} book={book} />)}
+				{books.map(book => <BookStrip key={book._id} book={book} doRefresh={doRefresh} />)}
 
 				<button onClick={() => { ((currPage > 1) && setCurrPage(currPage - 1)) }}>Prev</button>
 				<button onClick={() => { ((currPage <= totalPages - 1) && setCurrPage(currPage + 1)) }}>Next</button>

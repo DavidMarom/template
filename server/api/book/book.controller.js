@@ -34,6 +34,8 @@ async function deleteBook(req, res) {
 
 async function updateBook(req, res) {
     const book = req.body;
+	console.log(book);
+
     await bookService.update(book)
     res.send(book)
 }

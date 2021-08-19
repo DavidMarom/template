@@ -16,8 +16,8 @@ function remove(userId) {
     return httpService.delete(`book/${userId}`)
 }
 
-function update(user) {
-    return httpService.put(`book/update2`, user)
+function update(book) {
+    return httpService.put(`book/update`, book)
 }
 
 function findIdxToMark(suggestions, object) {
