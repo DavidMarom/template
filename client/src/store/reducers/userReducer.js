@@ -23,7 +23,8 @@ export function user(state = initialState, action = {}) {
             return { ...state, users: action.users };
         case 'REMOVE_USER':
             return { ...state, users: state.users.filter(user => user._id !== action.userId) };
-        case 'PAGE_NAME':
+        
+		case 'PAGE_NAME':
             return { ...state, pageName: action.name };
         case 'UPDATE_USER':
             return { ...state, users: state.users.map(user => (action._user._id === user._id) ? action._user : user) }

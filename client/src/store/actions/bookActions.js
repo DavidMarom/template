@@ -1,4 +1,4 @@
-import { bookService as bookService } from '../../services/bookService';
+import { bookService } from '../../services/bookService';
 import { loading, doneLoading } from './systemActions';
 
 export function countBooks() {

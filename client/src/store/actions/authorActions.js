@@ -1,4 +1,4 @@
-import { authorService as authorService } from '../../services/authorService';
+import { authorService } from '../../services/authorService';
 
 export function countAuthors() {
   return async dispatch => {

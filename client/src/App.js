@@ -3,15 +3,15 @@ import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { withRouter } from "react-router";
 
+// PAGES
 import { Books } from "./pages/Books";
 import { Authors } from "./pages/Authors";
+import { Tasks } from "./pages/Tasks";
 
+// COMPS
 import { SideBar } from "./cmps/SideBar";
 
 function _App() {
-	
-
-
 	return (
 		<div className="outter-container">
 			<div className="inner-container">
@@ -21,6 +21,7 @@ function _App() {
 						<Switch>
 							<Route exact component={Books} path={"/"} />
 							<Route exact component={Authors} path={"/authors"} />
+							<Route exact component={Tasks} path={"/tasks"} />
 
 						</Switch>
 					</div>

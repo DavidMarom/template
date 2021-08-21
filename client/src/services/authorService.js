@@ -1,11 +1,11 @@
-import httpService from './httpService'
+import { httpService } from './httpService'
 
 function count() {
-    return httpService.get(`author/count`);
+	return httpService.get(`author/count`);
 }
 
 function getAuthors() {
-    return httpService.get(`author/`);
+	return httpService.get(`author/`);
 }
 
 // function getById(userId) {
@@ -17,14 +17,14 @@ function getAuthors() {
 // }
 
 function update(author) {
-    return httpService.put(`author/update`, author)
+	return httpService.put(`author/update`, author)
 }
 
 
 export const authorService = {
-    getAuthors,
-    // getById,
-    // remove,
-    update,
-    count
+	getAuthors,
+	// getById,
+	// remove,
+	update,
+	count
 };

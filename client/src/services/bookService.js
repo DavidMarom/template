@@ -1,4 +1,4 @@
-import httpService from './httpService'
+import { httpService } from './httpService'
 
 function count() {
     return httpService.get(`book/count`);

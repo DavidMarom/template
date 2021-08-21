@@ -17,14 +17,14 @@ const _Books = () => {
 
 	let totalPages = Math.ceil(bookCount / 4)
 
-	const searchChange = ev => {
-		setSearch(ev.target.value);
-	}
+	// const searchChange = ev => {
+	// 	setSearch(ev.target.value);
+	// }
 
-	const doSearch = (ev) => {
-		ev.preventDefault();
-		dispatch(loadBooks(search));
-	}
+	// const doSearch = (ev) => {
+	// 	ev.preventDefault();
+	// 	dispatch(loadBooks(search));
+	// }
 
 	const doRefresh = () => {
 		setRefresh(refresh+1)

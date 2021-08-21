@@ -1,4 +1,4 @@
-import httpService from './httpService'
+import { httpService } from './httpService'
 
 
 function count() {
@@ -21,13 +21,13 @@ function update(user) {
     return httpService.put(`user/update2`, user)
 }
 
-async function login(userCred) {
-    const user = await httpService.post('auth/login', userCred)
-}
+// async function login(userCred) {
+//     const user = await httpService.post('auth/login', userCred)
+// }
 
-async function signup(userCred) {
-    const user = await httpService.post('auth/signup', userCred)
-}
+// async function signup(userCred) {
+//     const user = await httpService.post('auth/signup', userCred)
+// }
 
 async function logout() {
     await httpService.post('auth/logout');
@@ -39,9 +39,9 @@ function findIdxToMark(suggestions, object) {
 }
 
 export const userService = {
-    login,
+    // login,
     logout,
-    signup,
+    // signup,
     getUsers,
     getById,
     remove,

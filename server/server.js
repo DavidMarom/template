@@ -31,6 +31,7 @@ if (process.env.NODE_ENV === 'production') {
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const bookRoutes = require('./api/book/book.routes')
+const taskRoutes = require('./api/task/task.routes')
 const authorRoutes = require('./api/author/author.routes')
 
 
@@ -38,6 +39,7 @@ const authorRoutes = require('./api/author/author.routes')
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/book', bookRoutes)
+app.use('/api/task', taskRoutes)
 app.use('/api/author', authorRoutes)
 
 app.get('/**', (req, res) => {

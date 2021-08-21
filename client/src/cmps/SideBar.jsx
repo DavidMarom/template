@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 export const SideBar = () => {
@@ -12,13 +12,16 @@ export const SideBar = () => {
       <p className="title">Side Bar</p>
 
       <div className={(pageName === 'books' ? "active-cell" : "inactive-cell")}>
-        <NavLink to="/"><i className="fas fa-door-open"></i> Books</NavLink>
+        <NavLink to="/"> Books</NavLink>
       </div>
 
       <div className={(pageName === 'authors' ? "active-cell" : "inactive-cell")}>
-        <NavLink to="/authors"><i className="fas fa-file-contract"></i> Authors</NavLink>
+        <NavLink to="/authors"> Authors</NavLink>
       </div>
 
+      <div className={(pageName === 'tasks' ? "active-cell" : "inactive-cell")}>
+        <NavLink to="/tasks"> Tasks</NavLink>
+      </div>
 
       
     </div>
