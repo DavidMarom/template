@@ -31,7 +31,6 @@ const _Books = () => {
 		dispatch(loadBooks('', currPage));
 	}
 
-
 	useEffect(() => {
 		dispatch(loadBooks('', currPage));
 		dispatch(loadAuthors());
@@ -45,10 +44,7 @@ const _Books = () => {
 		dispatch(countBooks());
 	}, []);
 
-	
-
 	return (
-
 		(books ?
 			<div>
 				<h1>Books</h1>
@@ -60,7 +56,11 @@ const _Books = () => {
 				<div className="table-head">
 					<p className="tc">Book Name</p>
 					<p className="tc">Author</p>
+					<p className="tc">ID</p>
 					<p className="tc"></p>
+					<p className="tc"></p>
+					<p></p>
+					<p></p>
 				</div>
 
 				{books.map(book => <BookStrip key={book._id} book={book} doRefresh={doRefresh} />)}

@@ -30,11 +30,11 @@ export function BookStrip({ book, doRefresh }) {
 	};
 
 	let form = (
-		<form onSubmit={doUpdate}>
-			<input name="name" type="text" onChange={event => { setFormName(event.target.value) }} placeholder={book.name} /><br />
+		<form onSubmit={doUpdate} className="table">
+			<input className="tc" name="name" type="text" onChange={event => { setFormName(event.target.value) }} placeholder={book.name} />
 
-			<label htmlFor="authors">Choose author:</label>
-			<select name="author" id="authors" onChange={event => { setFormAuthor(event.target.value) }}>
+			{/* <label htmlFor="authors">Choose author:</label> */}
+			<select className="tc" name="author" id="authors" onChange={event => { setFormAuthor(event.target.value) }}>
 				{authors.map(author =>
 					<option
 					key={author._id}
@@ -43,21 +43,28 @@ export function BookStrip({ book, doRefresh }) {
 				}
 			</select>
 
-			<button>Save</button>
+			<p className="tc-small">{book._id}</p>
+			<p className="tc"></p>
+			<p className="tc"></p>
+			<button className="btn"><i className="fas fa-check"></i></button>
+			<button className="btn" onClick={toggleEdit}><i className="fas fa-times"></i></button>
 		</form>
 	)
-
+	
 	return (
 		(editMode ?
-			<div className="table">
+			<div >
 				{form}
-				<button onClick={toggleEdit}>Cancel</button>
 			</div>
 			:
 			<div className="table">
 				<p className="tc">{book.name}</p>
 				<p className="tc">{book.author}</p>
-				<button onClick={toggleEdit}>Edit</button>
+				<p className="tc-small">{book._id}</p>
+				<p className="tc"></p>
+				<p className="tc"></p>
+				<button className="btn" onClick={toggleEdit}><i className="fas fa-pen"></i></button>
+				<p></p>
 			</div>
 		)
 	)

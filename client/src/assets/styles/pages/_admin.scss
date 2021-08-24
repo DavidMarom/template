@@ -1,24 +1,24 @@
 .table-head {
     display: grid;
-    grid-template-columns: 17% 28% 22% 30%;
+    grid-template-columns: 25% 25% 20% 10% 10% 5% 5%;
     font-weight: bold;
 }
 
 .page-details {
     display: grid;
-    grid-template-columns: 30% 30% 30% 10%;
+    grid-template-columns: 25% 25% 20% 10% 10% 5% 5%;
     
 }
 
 .table {
     display: grid;
-    grid-template-columns: 17% 28% 22% 30%;
+    grid-template-columns: 25% 25% 20% 10% 10% 5% 5%;
 }
 
 // for punch-in page
 .table-head2 {
     display: grid;
-    grid-template-columns: 10% 28% 32% 30%;
+    grid-template-columns: 25% 25% 20% 10% 10% 5% 5%;
     font-weight: bold;
     background-color: #ffffff;
 }
@@ -44,9 +44,39 @@
     padding: 5px;
     border-radius: 0px;
     margin-right: 0px;
-    margin-bottom: 1px;
+    margin-bottom: 4px;
     background-color: rgb(37, 37, 37);
-    border-bottom: 1px solid #585858;
+    // border-bottom: 1px solid #585858;
+
+	color: $text-light;
+	
+	
+}
+
+.tc-small {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 5px;
+    border-radius: 0px;
+    margin-right: 0px;
+    margin-bottom: 4px;
+    background-color: rgb(37, 37, 37);
+
+	font-size: .6rem;
+	color: $text-light;
+	
+	
+}
+
+
+input{
+	background-color: $text-light;
+}
+::placeholder{
+	color: $text-light;
+	
 }
 
 .tch {
