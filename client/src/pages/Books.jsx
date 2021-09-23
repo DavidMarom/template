@@ -15,6 +15,7 @@ const _Books = () => {
 	const [currPage, setCurrPage] = useState(1);
 	const [search, setSearch] = useState('');
 
+
 	let totalPages = Math.ceil(bookCount / 4)
 
 	// const searchChange = ev => {
@@ -67,6 +68,7 @@ const _Books = () => {
 
 				<button onClick={() => { ((currPage > 1) && setCurrPage(currPage - 1)) }}>Prev</button>
 				<button onClick={() => { ((currPage <= totalPages - 1) && setCurrPage(currPage + 1)) }}>Next</button>
+
 			</div>
 			:
 			<h1>Loading</h1>

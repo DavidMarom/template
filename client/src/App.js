@@ -7,6 +7,7 @@ import { withRouter } from "react-router";
 import { Books } from "./pages/Books";
 import { Authors } from "./pages/Authors";
 import { Tasks } from "./pages/Tasks";
+import { Fbdb } from "./pages/Fbdb";
 
 // COMPS
 import { SideBar } from "./cmps/SideBar";
@@ -22,6 +23,7 @@ function _App() {
 							<Route exact component={Books} path={"/"} />
 							<Route exact component={Authors} path={"/authors"} />
 							<Route exact component={Tasks} path={"/tasks"} />
+							<Route exact component={Fbdb} path={"/firebase"} />
 
 						</Switch>
 					</div>
