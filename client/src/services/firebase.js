@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
+import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc, auth } from "firebase/firestore";
+import { GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
+
 
 initializeApp({
 	apiKey: "AIzaSyC_RmkY3D3A_TtSxbx4l8m-IrdZgmv4ioY",
@@ -11,10 +13,13 @@ initializeApp({
 });
 
 const db = getFirestore();
+const provider = new GoogleAuthProvider();
 
-async function addToDB  (coll, data) {
+
+
+async function addToDB(coll, data) {
 	let res = await addDoc(collection(db, coll), data);
-	return(res.id);
+	return (res.id);
 }
 
 const getAllDocs = (coll) => {
@@ -41,5 +46,7 @@ export const fbdb = {
 	addToDB,
 	getAllDocs,
 	RemoveDoc,
-	UpdateDB
+	UpdateDB,
+	provider
+	
 }

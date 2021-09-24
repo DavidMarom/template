@@ -22,14 +22,14 @@ const _Tasks = () => {
 
 	useEffect(() => {
 		dispatch(loadTasks());
-	}, [refresh]);
+	}, [refresh])// eslint-disable-line react-hooks/exhaustive-deps
 	
 	// On mount
 	useEffect(() => {
 		dispatch(loadTasks());
 		dispatch(setPageName('tasks'));
 		console.log(tasks);
-	}, []);
+	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		(tasks ?

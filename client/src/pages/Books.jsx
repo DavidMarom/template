@@ -36,14 +36,14 @@ const _Books = () => {
 		dispatch(loadBooks('', currPage));
 		dispatch(loadAuthors());
 
-	}, [currPage, refresh]);
+	}, [currPage, refresh])// eslint-disable-line react-hooks/exhaustive-deps
 
 
 	// On mount
 	useEffect(() => {
 		dispatch(setPageName('books'));
 		dispatch(countBooks());
-	}, []);
+	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		(books ?

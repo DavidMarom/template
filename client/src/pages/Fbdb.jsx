@@ -14,8 +14,7 @@ export const Fbdb = () => {
 	useEffect(() => {
 		dispatch(loadItems());
 		dispatch(setPageName('fbdb'));
-		console.log("Items:", items);
-	}, []);
+	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
 
 	const doAddItem = () => {

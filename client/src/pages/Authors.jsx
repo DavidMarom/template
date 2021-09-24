@@ -29,9 +29,9 @@ const _Authors = () => {
 
 	// On mount
 	useEffect(() => {
-		dispatch(setPageName('authors'));
-		dispatch(countAuthors());
-	}, []);
+		dispatch(setPageName('authors')); 
+		dispatch(countAuthors()); 
+	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
 
 	return (
