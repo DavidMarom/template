@@ -15,11 +15,24 @@ export function loadItems() {
 export function deleteItem(id) {
 	return async dispatch => {
 		try {
-			console.log("deleting:",id);
 			fbService.delItem(id);
 			dispatch({ type: 'REMOVE_ITEM', id });
 		} catch (err) {
-			console.log('err in loadItems', err);
+			console.log('err in deleteItem', err);
+
+		}
+	};
+}
+
+export function addItem(inData) {
+	return async dispatch => {
+		try {
+			let newId = await fbService.addItem(inData);
+			let data = { ...inData, id: newId }
+
+			dispatch({ type: 'ADD_ITEM', data });
+		} catch (err) {
+			console.log('err in addItem', err);
 
 		}
 	};

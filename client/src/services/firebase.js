@@ -12,7 +12,10 @@ initializeApp({
 
 const db = getFirestore();
 
-const addToDB = (coll, data) => addDoc(collection(db, coll), data)
+async function addToDB  (coll, data) {
+	let res = await addDoc(collection(db, coll), data);
+	return(res.id);
+}
 
 const getAllDocs = (coll) => {
 	return new Promise((resolve) => {

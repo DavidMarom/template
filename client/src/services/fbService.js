@@ -5,13 +5,17 @@ async function getItems() {
 }
 
 async function delItem(id) {
-	
 	fbdb.RemoveDoc("col02",id);
 	return id;
+}
 
+async function addItem(data) {
+	
+	return await fbdb.addToDB("col02",data);
 }
 
 export const fbService = {
     getItems,
-	delItem
+	delItem,
+	addItem
 };
