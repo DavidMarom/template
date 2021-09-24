@@ -9,6 +9,9 @@ export function fb(state = initialState, action = {}) {
 		case 'GET_ITEMS':
 			return { ...state, items: action.items };
 
+		case 'REMOVE_ITEM':
+			return { ...state, items: state.items.filter(item => item.id !== action.id) };
+
 
 		default:
 			return state

@@ -18,15 +18,7 @@ export const Fbdb = () => {
 	return (
 		<div>
 			<h1>Firebase test page</h1>
-			
-
-		{
-			items.map(item => <ItemStrip key={item.id} item={item} />)
-
-
-		}
-
-
+			{items.map(item => <ItemStrip key={item.id} item={item} />)}
 		</div>
 	)
 }
