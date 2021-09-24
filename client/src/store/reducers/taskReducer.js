@@ -1,16 +1,16 @@
 const initialState = {
-    tasks: []   
+	tasks: []
 }
 
 export function task(state = initialState, action = {}) {
-    switch (action.type) {
-       
+	switch (action.type) {
 
-        case 'GET_TASKS':
+
+		case 'GET_TASKS':
 			return { ...state, tasks: action.tasks };
 
 
-        default:
-            return state
-    }
+		default:
+			return state
+	}
 }

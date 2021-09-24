@@ -13,7 +13,7 @@ const _Books = () => {
 	const books = useSelector((state) => state.book.books);
 
 	const [currPage, setCurrPage] = useState(1);
-	const [search, setSearch] = useState('');
+	// const [search, setSearch] = useState('');
 
 
 	let totalPages = Math.ceil(bookCount / 4)

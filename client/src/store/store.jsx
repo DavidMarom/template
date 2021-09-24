@@ -1,12 +1,12 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 
-import { user } from '../store/reducers/userReducer';
-import { book } from '../store/reducers/bookReducer';
-import { author } from '../store/reducers/authorReducer';
-import { task } from '../store/reducers/taskReducer';
+import { user } from './reducers/userReducer';
+import { book } from './reducers/bookReducer';
+import { author } from './reducers/authorReducer';
+import { task } from './reducers/taskReducer';
 import { fb } from './reducers/fbReducer';
-import { system } from '../store/reducers/systemReducer';
+import { system } from './reducers/systemReducer';
 
 
 const rootReducer = combineReducers({

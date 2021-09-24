@@ -18,14 +18,13 @@ const _Authors = () => {
 
 
 	const doRefresh = () => {
-		setRefresh(refresh+1)
+		setRefresh(refresh + 1)
 		dispatch(loadAuthors());
 	}
 
-
 	useEffect(() => {
 		dispatch(loadAuthors());
-	}, [currPage, refresh]);
+	}, [currPage, refresh, dispatch]);
 
 
 	// On mount
@@ -34,7 +33,7 @@ const _Authors = () => {
 		dispatch(countAuthors());
 	}, []);
 
-	
+
 	return (
 
 		(authors ?

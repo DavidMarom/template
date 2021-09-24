@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+// import { useSelector, useDispatch } from 'react-redux'
 
 export function TaskStrip({ task }) {
-	const dispatch = useDispatch()
-	const authors = useSelector((state) => state.author.authors);
+	// const dispatch = useDispatch()
+	// const authors = useSelector((state) => state.author.authors);
 
 	// const [formName, setFormName] = useState(book.title);
 	// const [formAuthor, setFormAuthor] = useState(book.author);
