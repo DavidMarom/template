@@ -1,5 +1,6 @@
 const initialState = {
-	items: []
+	items: [],
+	user: null
 }
 
 export function fb(state = initialState, action = {}) {
@@ -13,8 +14,14 @@ export function fb(state = initialState, action = {}) {
 			return { ...state, items: state.items.filter(item => item.id !== action.id) };
 
 		case 'ADD_ITEM':
-            // return { ...state, items: [...state.items, state.items.map(item => (action.data.id === items.id) ? action.data : item)] }
-            return { ...state, items: [...state.items,  action.data  ] }
+			return { ...state, items: [...state.items, action.data] };
+
+		case 'SET_USER':
+			return { ...state, user: action.user };
+		
+		case 'REMOVE_USER':
+			return { ...state, user: null };
+
 
 
 		default:

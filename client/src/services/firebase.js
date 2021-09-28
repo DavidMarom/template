@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc, auth } from "firebase/firestore";
-import { GoogleAuthProvider ,signInWithPopup} from "firebase/auth";
+import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc } from "firebase/firestore";
+import { GoogleAuthProvider } from "firebase/auth";
 
 
 initializeApp({
@@ -14,8 +14,6 @@ initializeApp({
 
 const db = getFirestore();
 const provider = new GoogleAuthProvider();
-
-
 
 async function addToDB(coll, data) {
 	let res = await addDoc(collection(db, coll), data);

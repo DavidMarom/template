@@ -33,7 +33,12 @@ export function addItem(inData) {
 			dispatch({ type: 'ADD_ITEM', data });
 		} catch (err) {
 			console.log('err in addItem', err);
-
 		}
 	};
+
+
+}
+
+export function setUser(user) {
+	return dispatch => { dispatch({ type: 'SET_USER', action: user }) }
 }
