@@ -34,7 +34,7 @@ export const SideBar = () => {
 			</div>
 			
 			<div className={(pageName === 'debounce' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/debounce"> Debounce TBD</NavLink>
+				<NavLink to="/debounce"> Debounce</NavLink>
 			</div>
 		
 			<div className={(pageName === 'validation' ? "active-cell" : "inactive-cell")}>
