@@ -4,14 +4,17 @@ import { useSelector } from "react-redux";
 
 export const SideBar = () => {
 	const pageName = useSelector((state) => state.user.pageName);
-	// console.log("sidebar:", pageName);
 
 	return (
 		<div className="cbl2 inner-side-bar">
 			{/* <p className="title">Side Bar</p> */}
 
+			<div className={(pageName === 'lobby' ? "active-cell" : "inactive-cell")}>
+				<NavLink to="/"> Lobby</NavLink>
+			</div>
+
 			<div className={(pageName === 'books' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/"> Books</NavLink>
+				<NavLink to="/books"> Books</NavLink>
 			</div>
 
 			<div className={(pageName === 'authors' ? "active-cell" : "inactive-cell")}>
@@ -28,6 +31,14 @@ export const SideBar = () => {
 
 			<div className={(pageName === 'login' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/login"> Login</NavLink>
+			</div>
+			
+			<div className={(pageName === 'debounce' ? "active-cell" : "inactive-cell")}>
+				<NavLink to="/debounce"> Debounce TBD</NavLink>
+			</div>
+		
+			<div className={(pageName === 'validation' ? "active-cell" : "inactive-cell")}>
+				<NavLink to="/validation"> Validation TBD</NavLink>
 			</div>
 
 

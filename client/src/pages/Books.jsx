@@ -35,9 +35,7 @@ const _Books = () => {
 	useEffect(() => {
 		dispatch(loadBooks('', currPage));
 		dispatch(loadAuthors());
-
 	}, [currPage, refresh])// eslint-disable-line react-hooks/exhaustive-deps
-
 
 	// On mount
 	useEffect(() => {

@@ -45,11 +45,8 @@ export const Login = () => {
 	const doSignOut = () => {
 		const auth = getAuth();
 		signOut(auth).then(() => {
-			console.log("out");
+			// Remove user from context
 			setLoggedUser(null);
-			// dispatch(setUser(null));
-
-
 		}).catch((error) => {
 			console.log(error);
 		});
@@ -58,11 +55,6 @@ export const Login = () => {
 	useEffect(() => {
 		dispatch(setPageName('login'));
 	}, [])// eslint-disable-line react-hooks/exhaustive-deps
-
-	useEffect(() => {
-		
-		console.log("Context user",user);
-	}, [user])// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div>

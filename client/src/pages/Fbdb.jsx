@@ -12,7 +12,7 @@ import { ItemStrip } from '../cmps/ItemStrip';
 import { UserContext } from '../UserContext';
 
 export const Fbdb = () => {
-	const { user, setLoggedUser } = useContext(UserContext);
+	// const { user, setLoggedUser } = useContext(UserContext);
 	
 	const dispatch = useDispatch()
 	const items = useSelector((state) => state.fb.items);
