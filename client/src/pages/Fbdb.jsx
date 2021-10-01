@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
+// Redux store
 import { setPageName } from '../store/actions/userActions'
-import { loadItems ,addItem} from "../store/actions/fbActions";
+import { loadItems, addItem } from "../store/actions/fbActions";
+
+// Comps
 import { ItemStrip } from '../cmps/ItemStrip';
+
+// Context
 import { UserContext } from '../UserContext';
 
 export const Fbdb = () => {
-	const {value,SetValue} = useContext(UserContext);
+	const { user, setLoggedUser } = useContext(UserContext);
+	
 	const dispatch = useDispatch()
 	const items = useSelector((state) => state.fb.items);
 	const [itemInput, setItemInput] = useState('');
@@ -17,8 +24,8 @@ export const Fbdb = () => {
 	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
 	const doAddItem = () => {
-		let newObj={
-			name : itemInput
+		let newObj = {
+			name: itemInput
 		}
 		dispatch(addItem(newObj));
 		setItemInput('');
@@ -27,7 +34,6 @@ export const Fbdb = () => {
 	return (
 		<div>
 			<h1>Firebase test page</h1>
-			<h2>msg: {value}</h2>
 			<div className="table-fb-items">
 				<input className="tc" type="text" value={itemInput} onChange={ev => setItemInput(ev.target.value)}></input>
 				<button onClick={doAddItem}>Add</button>

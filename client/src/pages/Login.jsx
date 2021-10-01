@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react'
-import { useDispatch ,useSelector} from 'react-redux'
+import React, { useEffect ,useContext} from 'react'
+import { useDispatch } from 'react-redux'
+
+// Redux store
 import { setPageName } from '../store/actions/userActions'
-import { setUser } from '../store/actions/fbActions'
+
 import { fbdb } from '../services/firebase'
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
+import { UserContext } from '../UserContext';
 
 export const Login = () => {
+	const { user, setLoggedUser } = useContext(UserContext);
+
 	const dispatch = useDispatch()
-	const stateUser = useSelector((state) => state.fb.user);
 
 	async function doSignup() {
 		const auth = getAuth();
@@ -24,9 +28,10 @@ export const Login = () => {
 					uid: user.uid,
 					token: token
 				}
-				// Add the user to the store (redux)
-				dispatch(setUser(tmp));
 
+
+				// PUT THE USER IN CONTEXT
+				setLoggedUser(tmp);
 			}).catch((error) => {
 				// const errorCode = error.code;
 				// const errorMessage = error.message;
@@ -41,7 +46,8 @@ export const Login = () => {
 		const auth = getAuth();
 		signOut(auth).then(() => {
 			console.log("out");
-			dispatch(setUser(null));
+			setLoggedUser(null);
+			// dispatch(setUser(null));
 
 
 		}).catch((error) => {
@@ -55,19 +61,19 @@ export const Login = () => {
 
 	useEffect(() => {
 		
-		console.log("state",stateUser);
-	}, [stateUser])// eslint-disable-line react-hooks/exhaustive-deps
+		console.log("Context user",user);
+	}, [user])// eslint-disable-line react-hooks/exhaustive-deps
 
 	return (
 		<div>
 			<h1>Profile / Login</h1>
 
-			{(stateUser ? <button onClick={doSignOut}>Signout</button> : <button onClick={doSignup}>Login with google</button>)}
+			{(user ? <button onClick={doSignOut}>Signout</button> : <button onClick={doSignup}>Login with google</button>)}
 
-			{(stateUser ?
+			{(user ?
 				<div>
-					<p>{stateUser.name}</p>
-					<img src={stateUser.photoURL} />
+					<p>{user.name}</p>
+					<img src={user.photoURL} />
 				</div>
 				:
 				<p>Not Logged In</p>

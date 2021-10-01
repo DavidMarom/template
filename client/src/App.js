@@ -15,13 +15,13 @@ import { Login } from "./pages/Login";
 import { SideBar } from "./cmps/SideBar";
 
 function _App() {
-	const [value, setValue] = useState('aaaa')
+	const [user, setLoggedUser] = useState('aaaa');
 
 	return (
 		<div className="outter-container">
 			<div className="inner-container">
 				<div className="ra">
-					<UserContext.Provider value={{ value, setValue }}>
+					<UserContext.Provider value={{ user, setLoggedUser }}>
 						<div className="side-bar"><SideBar /></div>
 						<div className="content-container">
 							<Switch>
