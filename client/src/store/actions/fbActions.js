@@ -7,7 +7,6 @@ export function loadItems() {
 			dispatch({ type: 'GET_ITEMS', items });
 		} catch (err) {
 			console.log('err in loadItems', err);
-
 		}
 	};
 }
@@ -35,8 +34,6 @@ export function addItem(inData) {
 			console.log('err in addItem', err);
 		}
 	};
-
-
 }
 
 export function setUser(user) {

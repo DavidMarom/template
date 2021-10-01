@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 export const SideBar = () => {
 	const pageName = useSelector((state) => state.user.pageName);
+	// console.log("sidebar:", pageName);
 
 	return (
 		<div className="cbl2 inner-side-bar">
@@ -20,11 +21,11 @@ export const SideBar = () => {
 			<div className={(pageName === 'tasks' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/tasks"> Tasks</NavLink>
 			</div>
-			
+
 			<div className={(pageName === 'fbdb' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/firebase"> Firebase test</NavLink>
 			</div>
-			
+
 			<div className={(pageName === 'login' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/login"> Login</NavLink>
 			</div>

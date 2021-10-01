@@ -3,13 +3,14 @@ import { getFirestore, collection, doc, addDoc, getDocs, deleteDoc, updateDoc } 
 import { GoogleAuthProvider } from "firebase/auth";
 
 
+
 initializeApp({
-	apiKey: "AIzaSyC_RmkY3D3A_TtSxbx4l8m-IrdZgmv4ioY",
-	authDomain: "e2e-fb.firebaseapp.com",
-	projectId: "e2e-fb",
-	storageBucket: "e2e-fb.appspot.com",
-	messagingSenderId: "127510841946",
-	appId: "1:127510841946:web:eacf2b32d0ef6b302c2663"
+	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+	storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+	appId: process.env.REACT_APP_FIREBASE_APP_ID
 });
 
 const db = getFirestore();

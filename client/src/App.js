@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 import { withRouter } from "react-router";
+import { UserContext } from "./UserContext";
 
 // PAGES
 import { Books } from "./pages/Books";
@@ -14,22 +15,24 @@ import { Login } from "./pages/Login";
 import { SideBar } from "./cmps/SideBar";
 
 function _App() {
+	const [value, setValue] = useState('aaaa')
+
 	return (
 		<div className="outter-container">
 			<div className="inner-container">
 				<div className="ra">
-					<div className="side-bar"><SideBar /></div>
-					<div className="content-container">
-						<Switch>
-							<Route exact component={Books} path={"/"} />
-							<Route exact component={Authors} path={"/authors"} />
-							<Route exact component={Tasks} path={"/tasks"} />
-							<Route exact component={Fbdb} path={"/firebase"} />
-							<Route exact component={Login} path={"/login"} />
-
-
-						</Switch>
-					</div>
+					<UserContext.Provider value={{ value, setValue }}>
+						<div className="side-bar"><SideBar /></div>
+						<div className="content-container">
+							<Switch>
+								<Route exact component={Books} path={"/"} />
+								<Route exact component={Authors} path={"/authors"} />
+								<Route exact component={Tasks} path={"/tasks"} />
+								<Route exact component={Fbdb} path={"/firebase"} />
+								<Route exact component={Login} path={"/login"} />
+							</Switch>
+						</div>
+					</ UserContext.Provider>
 				</div>
 			</div>
 		</div>
