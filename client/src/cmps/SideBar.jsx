@@ -21,10 +21,6 @@ export const SideBar = () => {
 				<NavLink to="/authors"> Authors</NavLink>
 			</div>
 
-			<div className={(pageName === 'tasks' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/tasks"> Tasks</NavLink>
-			</div>
-
 			<div className={(pageName === 'fbdb' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/firebase"> Firebase test</NavLink>
 			</div>
@@ -40,7 +36,6 @@ export const SideBar = () => {
 			<div className={(pageName === 'validation' ? "active-cell" : "inactive-cell")}>
 				<NavLink to="/validation"> Validation</NavLink>
 			</div>
-
 
 		</div>
 	);
