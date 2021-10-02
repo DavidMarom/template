@@ -20,11 +20,11 @@ export const Lobby = () => {
 			<p>Hooks: useState, useContext, useEffect, useDispatch, useSelector ...</p>
 			<div className="h-space"></div>
 			<h2>UI design is in progress</h2>
-			<p>For some nice looking CSS please see my other projects: <span><a target="_blank" href="http://davidmarom.site/">Link to portfolio</a></span> </p>
+			<p>For some nice looking CSS please see my other projects: <span><a target="_blank" rel="noreferrer" href="http://davidmarom.site/">Link to portfolio</a></span> </p>
 			
 			<div className="h-space"></div>
 			<h2>Source code on gitHub</h2>
-			<p>Link: <span><a target="_blank" href="https://github.com/DavidMarom/template">repo</a></span> </p>
+			<p>Link: <span><a target="_blank" rel="noreferrer" href="https://github.com/DavidMarom/template">repo</a></span> </p>
 
 
 

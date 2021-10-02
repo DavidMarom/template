@@ -16,7 +16,6 @@ export const Validation = () => {
 		setCheck_stts(!check_stts);
 	}
 
-
 	const doSend = async ev => {
 		ev.preventDefault();
 		let valid = true;
@@ -48,13 +47,10 @@ export const Validation = () => {
 		dispatch(setPageName('validation'));
 	}, [])// eslint-disable-line react-hooks/exhaustive-deps
 
-
 	return (
 		<div>
 			<h1>Form Validation</h1>
-
 			<h4>The fields below are validated using regex (see code on gitHub)</h4>
-
 			<form onSubmit={doSend}>
 				<div className="input-container">
 					<input name="name" type="text" placeholder="Full Name" />

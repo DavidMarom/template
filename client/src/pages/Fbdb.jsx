@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 // Redux store
@@ -7,9 +7,6 @@ import { loadItems, addItem } from "../store/actions/fbActions";
 
 // Comps
 import { ItemStrip } from '../cmps/ItemStrip';
-
-// Context
-import { UserContext } from '../UserContext';
 
 export const Fbdb = () => {
 	// const { user, setLoggedUser } = useContext(UserContext);

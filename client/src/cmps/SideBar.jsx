@@ -14,15 +14,15 @@ export const SideBar = () => {
 			</div>
 
 			<div className={(pageName === 'books' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/books"> Books</NavLink>
+				<NavLink to="/books"> Books (mongoDB)</NavLink>
 			</div>
 
 			<div className={(pageName === 'authors' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/authors"> Authors</NavLink>
+				<NavLink to="/authors"> Authors (mongoDB)</NavLink>
 			</div>
 
 			<div className={(pageName === 'fbdb' ? "active-cell" : "inactive-cell")}>
-				<NavLink to="/firebase"> Firebase test</NavLink>
+				<NavLink to="/firebase"> Firebase DB</NavLink>
 			</div>
 
 			<div className={(pageName === 'login' ? "active-cell" : "inactive-cell")}>

@@ -46,13 +46,15 @@
     border-radius: 0px;
     margin-right: 0px;
     margin-bottom: 4px;
-    background-color: rgb(37, 37, 37);
+    background-color: $sidebar-highlight;
     // border-bottom: 1px solid #585858;
 
 	color: $text-light;
+	}
+
+	// $sidebar-highlight
+	// $sidebar-bg
 	
-	
-}
 
 .tc-small {
     display:flex;
@@ -63,7 +65,7 @@
     border-radius: 0px;
     margin-right: 0px;
     margin-bottom: 4px;
-    background-color: rgb(37, 37, 37);
+    background-color: $sidebar-highlight;
 
 	font-size: .6rem;
 	color: $text-light;

@@ -29,7 +29,6 @@ export const Login = () => {
 					token: token
 				}
 
-
 				// PUT THE USER IN CONTEXT
 				setLoggedUser(tmp);
 			}).catch((error) => {
@@ -62,10 +61,13 @@ export const Login = () => {
 
 			{(user ? <button onClick={doSignOut}>Signout</button> : <button onClick={doSignup}>Login with google</button>)}
 
+			<div className="h-space"></div>
+
 			{(user ?
 				<div>
 					<p>{user.name}</p>
-					<img src={user.photoURL} />
+					<p>{user.mail}</p>
+					<img src={user.photoURL} alt="" />
 				</div>
 				:
 				<p>Not Logged In</p>
