@@ -8,13 +8,24 @@
 		color: #c4c5ff;
 	}
 
-	
 	h2 {
 		color: $red;
 	}
-	
 }
 
-.h-space{
+.h-space {
 	height: 40px;
+}
+
+.login-btn20 {
+	background-image: url("../../img/google_login.png");
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size:contain;
+	cursor: pointer;
+
+	&:hover{
+		filter: drop-shadow(0px 0px 5px #ffffff5b);
+
+	}
 }

@@ -15,10 +15,11 @@ export const Debounce = () => {
 	return (
 		<div>
 			<h1>Debounce</h1>
-			<div className="App" >
-				<DebounceInput minLength={2} debounceTimeout={1000} onChange={event => setState(event.target.value)} />
-				<p>Value: {state}</p>
-			</div>
+			<div className="h-space"></div>
+
+			<DebounceInput minLength={2} debounceTimeout={1000} onChange={event => setState(event.target.value)} />
+			<div className="h-space"></div>
+			<p>Value: {state}</p>
 		</div>
 	)
 }

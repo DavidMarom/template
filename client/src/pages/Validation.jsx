@@ -50,7 +50,9 @@ export const Validation = () => {
 	return (
 		<div>
 			<h1>Form Validation</h1>
-			<h4>The fields below are validated using regex (see code on gitHub)</h4>
+			<p>The fields below are validated using regex (see code on gitHub)</p>
+			<div className="h-space"></div>
+
 			<form onSubmit={doSend}>
 				<div className="input-container">
 					<input name="name" type="text" placeholder="Full Name" />

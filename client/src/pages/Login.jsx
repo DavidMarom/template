@@ -1,4 +1,4 @@
-import React, { useEffect ,useContext} from 'react'
+import React, { useEffect, useContext } from 'react'
 import { useDispatch } from 'react-redux'
 
 // Redux store
@@ -58,8 +58,9 @@ export const Login = () => {
 	return (
 		<div>
 			<h1>Profile / Login</h1>
+			<div className="h-space"></div>
 
-			{(user ? <button onClick={doSignOut}>Signout</button> : <button onClick={doSignup}>Login with google</button>)}
+			{(user ? <button onClick={doSignOut}>Signout</button> : <div className="login-btn20" onClick={doSignup}></div>)}
 
 			<div className="h-space"></div>
 

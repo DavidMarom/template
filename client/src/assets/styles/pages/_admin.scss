@@ -15,7 +15,6 @@
     grid-template-columns: 25% 25% 20% 10% 10% 5% 5%;
 }
 
-
 // for punch-in page
 .table-head2 {
     display: grid;
@@ -52,10 +51,6 @@
 	color: $text-light;
 	}
 
-	// $sidebar-highlight
-	// $sidebar-bg
-	
-
 .tc-small {
     display:flex;
     flex-direction: column;
@@ -68,18 +63,14 @@
     background-color: $sidebar-highlight;
 
 	font-size: .6rem;
-	color: $text-light;
-	
-	
+	color: $text-light;	
 }
-
 
 input{
 	background-color: #fff;
 }
 ::placeholder{
 	color: $text-light;
-	
 }
 
 .tch {
